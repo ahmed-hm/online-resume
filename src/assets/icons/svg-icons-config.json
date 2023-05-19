@@ -1,0 +1,8 @@
+{
+  "iconImageFiles": [
+    { "iconName": "github", "iconPath": "/assets/icons/icons8-github.svg" },
+    { "iconName": "linkedin", "iconPath": "/assets/icons/icons8-linkedin.svg" },
+    { "iconName": "burger-menu", "iconPath": "/assets/icons/icons8-burger-menu.svg" }
+  ],
+  "customIcons": []
+}
