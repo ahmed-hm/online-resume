@@ -20,7 +20,7 @@ import { SplitCardComponent } from './components/split-card/split-card.component
     HttpClientModule,
     AppRoutingModule,
     AngularSvgIconModule.forRoot(),
-    AngularSvgIconPreloaderModule.forRoot({ configUrl: '/assets/icons/svg-icons-config.json' })
+    AngularSvgIconPreloaderModule.forRoot({ configUrl: 'assets/icons/svg-icons-config.json' })
   ],
   providers: [],
   bootstrap: [MainComponent]
