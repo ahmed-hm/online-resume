@@ -1,0 +1,90 @@
+@import '/src/assets/styles/fonts.scss';
+
+$split-ratio: (
+  25: 25%,
+  33: 33.33%,
+  50: 50%,
+  66: 66.66%,
+  75: 75%
+);
+
+$split-direction: (
+  vertical: column,
+  horizontal: row
+);
+
+@each $ratio, $value in $split-ratio {
+  @each $direction, $direction-value in $split-direction {
+    .split-#{$ratio}-#{$direction} {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+
+      .split-start {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        height: $value;
+
+        @if $direction == 'vertical' {
+          width: 100%;
+          height: $value;
+        } @else {
+          width: $value;
+          height: 100%;
+        }
+      }
+
+      .split-end {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        @if $direction == 'vertical' {
+          width: 100%;
+          height: calc(100% - #{$value});
+        } @else {
+          width: calc(100% - #{$value});
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: map-get($breakpoints, md)) {
+  @each $ratio, $value in $split-ratio {
+    @each $direction, $direction-value in $split-direction {
+      .split-#{$ratio}-#{$direction} {
+        flex-direction: column;
+
+        .split-start {
+          justify-content: center;
+          @if $direction == 'horizontal' {
+            width: 100%;
+            height: $value;
+          } @else {
+            width: $value;
+            height: 100%;
+          }
+        }
+
+        .split-end {
+          justify-content: center;
+          @if $direction == 'horizontal' {
+            width: 100%;
+            height: calc(100% - #{$value});
+          } @else {
+            width: calc(100% - #{$value});
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
