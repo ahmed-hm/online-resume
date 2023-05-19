@@ -1,0 +1,49 @@
+<div class="header">
+  <div class="header__title">
+    <p class="header__title__name">{{ name }}</p>
+    <p class="header__title__profession">software engineer</p>
+  </div>
+  <div class="header__links">
+    <ul class="header__links__list">
+      <li class="header__links__list__item">
+        <a class="header__links__list__item__link" [routerLink]="['info']"> about me</a>
+      </li>
+      <li class="header__links__list__item">
+        <a class="header__links__list__item__link" [routerLink]="['resume']"> resume</a>
+      </li>
+      <li class="header__links__list__item">
+        <a class="header__links__list__item__link" [routerLink]="['projects']"> projects</a>
+      </li>
+      <li class="header__links__list__item">
+        <a class="header__links__list__item__link" [routerLink]="['contact']"> contact</a>
+      </li>
+    </ul>
+  </div>
+  <div class="header__links-mobile">
+    <div class="header__links-mobile__toggle" (click)="toggleMenu($event)">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="header__links-mobile">
+      <ul class="header__links-mobile__list">
+        <li class="header__links-mobile__list__item" [routerLink]="['info']">
+          <a class="header__links-mobile__list__item__link" [routerLink]="['info']"> about me</a>
+        </li>
+        <li class="header__links-mobile__list__item" [routerLink]="['resume']">
+          <a class="header__links-mobile__list__item__link" [routerLink]="['resume']"> resume</a>
+        </li>
+        <li class="header__links-mobile__list__item" [routerLink]="['projects']">
+          <a class="header__links-mobile__list__item__link" [routerLink]="['projects']"> projects</a>
+        </li>
+        <li class="header__links-mobile__list__item" [routerLink]="['contact']">
+          <a class="header__links-mobile__list__item__link" [routerLink]="['contact']"> contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
