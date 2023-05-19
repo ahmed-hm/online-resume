@@ -1,0 +1,28 @@
+.container-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+
+  .header {
+    width: 100%;
+    flex: 0;
+    flex-basis: 3rem;
+  }
+
+  .main {
+    width: 100%;
+    flex: 1;
+    flex-basis: 0;
+  }
+
+  .footer {
+    width: 100%;
+    flex: 0;
+    flex-basis: 3rem;
+  }
+}
