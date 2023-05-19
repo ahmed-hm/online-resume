@@ -1,0 +1,71 @@
+@import '/src/assets/styles/breakpoints.scss';
+
+@font-face {
+  font-family: 'Avenir LT 55 Roman';
+  src: url('/assests/fonts/AvenirLT-Roman.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins SemiBold';
+  src: url('/assests/fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins Bold';
+  src: url('/assests/fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+$type-scale: (
+  sm: (
+    300: 0.75rem,
+    400: 0.875rem,
+    500: 1rem,
+    600: 1.125rem,
+    700: 1.25rem,
+    800: 1.5rem,
+    900: 1.75rem
+  ),
+  md: (
+    300: 0.75rem,
+    400: 0.875rem,
+    500: 1rem,
+    600: 1.125rem,
+    700: 1.25rem,
+    800: 1.5rem,
+    900: 1.75rem
+  ),
+  lg: (
+    300: 0.875rem,
+    400: 1rem,
+    500: 1.125rem,
+    600: 1.25rem,
+    700: 1.5rem,
+    800: 1.75rem,
+    900: 2rem
+  ),
+  xl: (
+    300: 1rem,
+    400: 1.125rem,
+    500: 1.25rem,
+    600: 1.5rem,
+    700: 1.75rem,
+    800: 2rem,
+    900: 2.25rem
+  )
+);
+
+@each $breakpoint, $width in $breakpoints {
+  @media (min-width: $width) {
+    :root {
+      @each $weight, $size in map-get($type-scale, $breakpoint) {
+        --fs-#{$weight}: #{$size};
+      }
+    }
+  }
+}
