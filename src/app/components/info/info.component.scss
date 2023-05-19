@@ -1,0 +1,187 @@
+@import '/src/assets/styles/fonts.scss';
+
+.container-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(to right, var(--primary) 0%, var(--primary) 45%, var(--white) 45%, var(--white) 100%);
+
+  &__card {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    &__profile {
+      background-color: var(--tertiary);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: calc(30 * var(--fs-300));
+      aspect-ratio: 1/1.4;
+      height: 100%;
+      box-shadow: -0.5rem 0.5rem 1.1rem 0rem var(--shadow);
+
+      .profile-avatar {
+        width: calc(14 * var(--fs-300));
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        margin: calc(5 * var(--fs-300)) 0 calc(3 * var(--fs-300));
+      }
+
+      .profile-name {
+        font-size: var(--fs-800);
+        font-weight: 700;
+        width: min-content;
+        line-height: 1.2;
+        text-transform: capitalize;
+        font-family: 'Poppins SemiBold';
+      }
+
+      .profile-name-break {
+        height: 3px;
+        width: 60px;
+        margin: calc(2 * var(--fs-300)) 0;
+        border-radius: 4px;
+        border-style: none;
+        background-color: var(--secondary);
+      }
+
+      .profile-profession {
+        font-size: var(--fs-600);
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        margin: 1rem;
+        color: var(--font-color);
+      }
+
+      .profile-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: auto;
+        background-color: var(--white);
+        width: 100%;
+        z-index: 1;
+
+        &__link {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: calc(4 * var(--fs-300));
+          aspect-ratio: 1;
+
+          &__icon {
+            width: calc(2.25 * var(--fs-300));
+            aspect-ratio: 1/1;
+          }
+        }
+      }
+    }
+
+    &__details {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: calc(30 * var(--fs-300));
+      aspect-ratio: 1/1.4;
+      height: 100%;
+      flex-wrap: wrap;
+      padding: var(--fs-800);
+
+      .details-title {
+        font-size: calc(3 * var(--fs-800));
+        margin-top: 0;
+        font-weight: 900;
+        width: min-content;
+        line-height: 1.2;
+        margin-bottom: calc(0.625 * var(--fs-300));
+        text-transform: capitalize;
+        font-family: 'Poppins SemiBold';
+      }
+
+      .details-subtitle {
+        font-size: var(--fs-600);
+        font-weight: 300;
+        word-spacing: 0.2rem;
+        color: var(--font-color);
+        font-family: 'Poppins SemiBold';
+      }
+
+      .details-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+        margin: calc(3 * var(--fs-300)) 0;
+
+        &__filled {
+          background-color: var(--secondary);
+          color: var(--white);
+          border: 2px solid var(--secondary);
+          font-size: var(--fs-300);
+          font-weight: 300;
+          text-transform: uppercase;
+          padding: calc(0.625 * var(--fs-300)) var(--fs-800);
+          transition: all 0.2s ease-in-out;
+          border-radius: 2rem;
+          cursor: pointer;
+
+          &:hover {
+            background-color: var(--white);
+            color: var(--secondary);
+          }
+        }
+
+        &__outlined {
+          background-color: var(--white);
+          color: var(--secondary);
+          border: 2px solid var(--secondary);
+          font-size: var(--fs-300);
+          font-weight: 300;
+          text-transform: uppercase;
+          padding: calc(0.625 * var(--fs-300)) var(--fs-800);
+          transition: all 0.2s ease-in-out;
+          border-radius: 2rem;
+          cursor: pointer;
+
+          &:hover {
+            background-color: var(--secondary);
+            color: var(--white);
+          }
+        }
+      }
+
+      .details-body {
+        font-size: var(--fs-500);
+        font-weight: 300;
+        line-height: 1.5;
+        text-align: justify;
+        text-justify: inter-word;
+        color: var(--font-color);
+      }
+    }
+  }
+
+  @media (max-width: map-get($breakpoints, md)) {
+    background: linear-gradient(to bottom, var(--white) 0%, var(--white) 35%, var(--primary) 35%, var(--primary) 100%);
+
+    &__card {
+      &__profile {
+        .profile-social {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}

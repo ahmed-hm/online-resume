@@ -1,0 +1,38 @@
+<div class="container-info">
+  <app-split-card class="container-info__card" splitRatio="split-50" splitDirection="horizontal">
+    <ng-container split-start *ngTemplateOutlet="splitStart"></ng-container>
+    <ng-container split-end *ngTemplateOutlet="splitEnd"></ng-container>
+  </app-split-card>
+</div>
+
+<ng-template #splitStart>
+  <div class="container-info__card__profile">
+    <img class="profile-avatar" src="/assets/imgs/profile.jpeg" alt="profile image" />
+    <p class="profile-name">{{ name }}</p>
+    <hr class="profile-name-break" />
+    <p class="profile-profession">{{ title }}</p>
+    <div class="profile-social">
+      <a [href]="github" target="_blank" class="profile-social__link">
+        <svg-icon class="profile-social__link__icon" viewBox="auto" name="github"></svg-icon>
+      </a>
+      <a [href]="linkedin" target="_blank" class="profile-social__link">
+        <svg-icon class="profile-social__link__icon" viewBox="auto" name="linkedin"></svg-icon>
+      </a>
+    </div>
+  </div>
+</ng-template>
+<ng-template #splitEnd>
+  <div class="container-info__card__details">
+    <p class="details-title">hello</p>
+    <p class="details-subtitle">Here's who I am & what I do</p>
+    <div class="details-buttons">
+      <button class="details-buttons__filled" (click)="downloadResume()">resume</button>
+      <button class="details-buttons__outlined">projects</button>
+    </div>
+    <span class="details-body">
+      MEAN Stack and Android Develospaner with a demonstrated history of working in the computer software industry.
+      Skilled in Java, C++, NodeJs, Angular, Mongodb and ExpressJs. Strong engineering professional with a Bachelor of
+      Science (Distinct grade with honors) - BS focused in Computer Engineering from Aswan University.
+    </span>
+  </div>
+</ng-template>
