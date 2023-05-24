@@ -96,7 +96,7 @@
       aspect-ratio: 1/1.4;
       height: 100%;
       flex-wrap: wrap;
-      padding: var(--fs-800);
+      padding: var(--fs-300) var(--fs-800);
 
       .details-title {
         font-size: calc(3 * var(--fs-800));
@@ -164,8 +164,8 @@
 
       .details-body {
         font-size: var(--fs-500);
-        font-weight: 300;
-        line-height: 1.5;
+        font-weight: 500;
+        line-height: 1.35;
         text-align: justify;
         text-justify: inter-word;
         color: var(--font-color);
