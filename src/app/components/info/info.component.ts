@@ -20,6 +20,6 @@ export class InfoComponent {
   }
 
   downloadResume(): void {
-    window.open('assets/files/ahmed-hamdy-resume.pdf', '_blank');
+    window.open('assets/files/ahmed-hamdy.pdf', '_blank');
   }
 }
